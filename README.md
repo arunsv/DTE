@@ -2,11 +2,15 @@
 Compute the delayed transfer entropy (DTE); recovery of delay profile between two signals via computation of DTE
 
 Description of scripts, prerequisites and  how to run the scripts
+
+
 The DTE package comprises a core C++ program and a Python driver script. The C++ code is a general transfer entropy computation framework that reads in  time series data from a timing file and computes and outputs  transfer entropy values between all possible pairs. Even though the code can handle an arbitrary number of timing trains, our focus will be between two causally related signals with various delay models as driven by the Python script. Note that the delay profiles can be arbitrary; we use well known models for verification. 
 
 The Python driver script helps to generate two causally relate time series according to known forward delay models. For illustration purposes, three different delay models are considered namely a constant delay, a uniform delay distribution and a Gaussian delay distribution. Once the two time series are generated, the delayed transfer entropy is computed by sweeping the delay parameter in equation 3. The resulting profile is seen to provide evidence of the forward delay model which is unseen by the transfer entropy engine. The technical details are explained in the accompanying paper [1].
 
 Description of the C++ engine:
+
+
 To build the program just run make within the “src” sub-directory. The program supports exactly five arguments and the usage is as follows:
 ./DTE workingDir timingFile binResolution delay TE_Calculation_Mode
 
